@@ -1,0 +1,37 @@
+{
+  "name": "agent-plugins",
+  "owner": {
+    "name": "Mai Dang Duong",
+    "email": "maidangduong92tn@gmail.com"
+  },
+  "metadata": {
+    "description": "A collection of Claude Code plugins. Install only the ones you need.",
+    "version": "0.0"
+  },
+  "plugins": [
+    {
+      "name": "projector",
+      "source": "./plugins/projector",
+      "description": "Project discovery - Summarize and give details and designs of project",
+      "version": "0.0",
+      "category": "investigation",
+      "keywords": ["new", "discover", "investigate"]
+    },
+    {
+      "name": "task-resolver",
+      "source": "./plugins/task-resolver",
+      "description": "Agent plugin for task resolving",
+      "version": "0.2",
+      "category": "task",
+      "keywords": ["task", "resolve", "workflow"]
+    },
+    {
+      "name": "prompt-workspace",
+      "source": "./plugins/prompt-workspace",
+      "description": "Prompt refinement",
+      "version": "0.1.0",
+      "category": "prompt",
+      "keywords": ["prompt", "normalize", "refine"]
+    }
+  ]
+}
