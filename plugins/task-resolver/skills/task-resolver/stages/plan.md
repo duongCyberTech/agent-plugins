@@ -29,6 +29,7 @@
 Write `planning/index.md` ([template](../templates/plan-index.md)), plus one `NN-<slug>.md` per sub-task ([template](../templates/plan-subtask.md)). Each sub-task file has: Title · Description · Related resource files (`file:line`) · Diagrams (the requested list, `flow` by default) · Migration · Exceptions · Edge cases · Tests · Unclear issues.
 
 - **Stay with the requirement and the decisions.** Every sub-task names the requirement section or decision it serves. A step that serves neither goes under *Unclear issues*, not into the plan.
+- **Design to the [coding rules](../rules/index.md).** Search for reusable components before planning a new one, and list what each sub-task reuses under *Related resource files*. Name the new units it adds, one responsibility each; say where multi-step writes run in a transaction; for UI work, name the CSS library and the tokens it will use.
 - A sub-task is one reviewable change. Split by layer only when each layer can be tested on its own. Tests are a sub-task of their own, and every sub-task also names its tests.
 - `index.md` carries:
   - links to the requirement and the decisions;

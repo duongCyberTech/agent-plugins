@@ -51,6 +51,7 @@ The checks a change must pass before it counts as done. Copy them from the CI co
 
 - Tests live in: <paths and naming>
 - Comment density: <match the file / sparse / docstrings required>
+- Styling: <CSS library (Tailwind / Bootstrap / MUI / none), preprocessor (SCSS / none), where the theme tokens live>
 - Other house rules: <from CONTRIBUTING, CLAUDE.md, linters>
 
 ## Known traps

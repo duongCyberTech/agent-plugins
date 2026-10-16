@@ -23,7 +23,7 @@ mkdir -p .claude/workflows/task-logs \
 │   ├── README.md           what goes where (created below)
 │   ├── project.md          the project profile (created below)
 │   ├── requirements/       index.md + whatever it links to
-│   ├── rules/              standing rules for every task (optional)
+│   ├── rules/              standing rules for every task (+ drafted framework-*.md)
 │   └── feedbacks/          feedback files (optional)
 └── workspace/              the live task (STATUS.md appears at /task-resolver:start)
 ```
@@ -51,7 +51,8 @@ usable one that isn't listed. Offer to update the file; change it only on a yes.
   - `Git command allowed: <e.g. diff, status, log>` (default: read only)
   - `Environments: <e.g. development>`
   Link any mockups, screenshots, recordings or docs from it.
-- `rules/*.md`: rules that hold for every task in this repo.
+- `rules/*.md`: rules that hold for every task in this repo. `framework-*.md` are drafted by
+  `/task-resolver:setup` from the detected frameworks; edit them, then mark them confirmed.
 - `feedbacks/`: feedback files for `/task-resolver:feedback`.
 - `project.md`: how this repo is built, tested and run. Edit it if a command is wrong.
 - `../config.json`: which stages run (`stages`) and which extra plugins, MCP servers and skills
@@ -65,14 +66,22 @@ run `bash ${CLAUDE_SKILL_DIR}/scripts/detect-stack.sh .`, confirm what it sugges
 config, task runners and README, and write `workframe/project.md` from
 [../templates/project.md](../templates/project.md).
 
-## 5. Version control (ask, don't act)
+## 5. Framework rules (one per framework without a `workframe/rules/framework-<slug>.md`)
+
+Follow [rule 5](../rules/05-framework-practices.md): take each framework and its version from the
+profile and the lock files, collect its practices and design patterns (the repo first, then its linters,
+then the official guides), and draft `workframe/rules/framework-<slug>.md` from
+[../templates/framework-rules.md](../templates/framework-rules.md) with `Status: draft`. Never rewrite
+an existing one; propose additions instead.
+
+## 6. Version control (ask, don't act)
 
 If `.claude/workflows/` isn't ignored (`git check-ignore -q .claude/workflows/x`), tell the user and
 offer to add it to `.gitignore`, or ask whether they'd rather commit the task logs. Change nothing
 without a yes.
 
-## 6. Report
+## 7. Report
 
 Check the result with `ls -R .claude/workflows`. Report what was created and what already existed
-and was left alone. Show the stages and the extras recorded in `config.json`, and the profile's Commands table and ask the user to confirm or correct it.
+and was left alone. Show the stages and the extras recorded in `config.json`, and the profile's Commands table, plus the rules of each drafted framework file, and ask the user to confirm or correct them.
 Finish with the next step: write `workframe/requirements/index.md`, then run `/task-resolver:start`.

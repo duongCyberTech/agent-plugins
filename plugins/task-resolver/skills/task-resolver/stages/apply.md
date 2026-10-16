@@ -6,7 +6,7 @@
 
 - **Read the project profile** (`workframe/project.md`). If it's missing, build it first ([../references/environment.md](../references/environment.md#building-the-profile)). Every command below comes from it.
 - **Baseline.** Using the profile's commands, run the test files you are about to touch, one at a time, then the type check and the lint on the files you will edit. Record the failures, error counts and offences they already have under *Baseline* in `implementation/index.md`. That turns "pre-existing" from a guess into a fact. Skip any check the profile marks `—`.
-- Re-read `workframe/rules/` and the allowed files.
+- Re-read `workframe/rules/`, the built-in [coding rules](../rules/index.md) and the allowed files. If the change touches styles and the profile's *Conventions → Styling* is empty, detect the CSS library now and fill it in ([../rules/03-styling.md](../rules/03-styling.md)).
 
 ## Rework after a plan revision
 
@@ -21,7 +21,7 @@ The original log stays as it is; it records what was built before the revision.
 ## Per sub-task, in the plan's build order
 
 0. Read the branch (SKILL.md → Branches). If it changed since the last STATUS row, add a row before you edit anything.
-1. Implement exactly that sub-task. Mirror existing patterns: find the nearest sibling feature and copy its shape (structure, naming, error handling, test style). Follow the language's and the repo's conventions, not habits from another stack.
+1. Implement exactly that sub-task. Mirror existing patterns: find the nearest sibling feature and copy its shape (structure, naming, error handling, test style). Follow the language's and the repo's conventions, not habits from another stack. Reuse what exists before writing anything new, and keep to the [coding rules](../rules/index.md).
 2. Run its tests, per file. Fix until they are green, or until you hit a Stop point.
 3. Write `implementation/NN-<slug>.md` ([template](../templates/implementation-log.md)). It records:
    - Title, Task title and Branch;

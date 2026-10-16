@@ -9,7 +9,7 @@
 
 ## 1. Intake
 
-0. If `.claude/workflows/` doesn't exist, run [setup.md](setup.md) first. If `workframe/project.md` doesn't exist, build it ([../references/environment.md](../references/environment.md#building-the-profile)); the user can confirm it at G1 along with the questions.
+0. If `.claude/workflows/` doesn't exist, run [setup.md](setup.md) first. If `workframe/project.md` doesn't exist, build it ([../references/environment.md](../references/environment.md#building-the-profile)); the user can confirm it at G1 along with the questions. Likewise, draft `workframe/rules/framework-<slug>.md` for any framework in the profile that has none ([rule 5](../rules/05-framework-practices.md)), and list each draft under G1's *Needs your say*.
 1. Read `requirements/index.md`, then every file it points to, in full. If `workframe/rules/*.md` exists, read that too.
    - **Refined requirement.** When the `prompt-workspace` dev mod is loaded, it holds `/task-resolver:start` until the user has reviewed a refined restatement of the requirement (Requirements / Objectives / Environment / Constraints / Rules) and approved it; approval writes `requirements/refined.md` and then runs this stage. If `refined.md` exists and doesn't say *Not refined*, read it after the original files and treat it as the user's approved reading of them: its *Constraints* go into STATUS → Constraints with the rest (step 2), and its `Assume:` bullets count as settled. Where it contradicts the originals, don't pick a side; raise it as a G1 question. The file is snapshotted with the rest of the folder (step 4).
 2. Copy the binding constraints into STATUS → Constraints: allowed files, allowed git commands, environments, and any "must", "only" or "don't".

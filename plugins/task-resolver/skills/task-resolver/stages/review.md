@@ -6,7 +6,8 @@
    - interaction with neighbours: global event or key handlers, middleware, caches, client-side navigation and restore, concurrent callers;
    - values computed but never used or shown;
    - failure paths that fail silently, and error wording;
-   - the language's own traps (nil or None handling, async errors that are never awaited, integer overflow, locale and timezone, resource cleanup).
+   - the language's own traps (nil or None handling, async errors that are never awaited, integer overflow, locale and timezone, resource cleanup);
+   - breaches of the [coding rules](../rules/index.md) in the change set: a duplicate of an existing helper or component, custom CSS where a library token exists, flat or over-nested SCSS, a fat new unit, a multi-step write outside a transaction.
 
    The one real bug in a past feature got past testing: Escape closed a dialog and also cleared the panel behind it. The scenario had checked only that the dialog closed.
 3. **Reproduce every finding** with a test, the running system, the console or a measured count before writing it down.

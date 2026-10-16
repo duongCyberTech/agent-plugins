@@ -15,6 +15,7 @@ intake ─► discuss ─►⛩G1─► plan ─►⛩G2─► implement ─► 
 - **Three approval gates.** G1 settles the open decisions, G2 approves the plan and G3 approves the test scenarios. Nothing crosses a gate without your reply.
 - **Everything leaves a file.** Discussion, plan, one log per sub-task, test logs, audit, code review. `STATUS.md` always says where the task stands.
 - **Verified in the running system**, not only by tests: the browser for web UIs, requests for APIs, the binary for CLIs, a scratch caller for libraries.
+- **Built-in coding rules** ([`skills/task-resolver/rules/`](skills/task-resolver/rules/index.md)): SOLID and ACID, reuse existing components first, the project's CSS library before custom styles (nested SCSS when the repo uses SCSS), and no fat classes, modules, components or stylesheets. Setup also detects your frameworks and drafts their practices and design patterns into `workframe/rules/framework-<name>.md` for you to confirm. Your repo's `workframe/rules/` wins on conflict.
 - **Nothing is deleted.** Abandoned approaches move to `superseded/`. Archiving copies the workspace, checks every file's checksum and every link, and clears the workspace only if all of it passes.
 
 ## Install
@@ -71,7 +72,7 @@ go                                   # or answer by number: "Q1: A, Q3: default"
 ├── workframe/            yours: the inputs
 │   ├── project.md        project profile: stack, commands, CI checks, how to verify (edit freely)
 │   ├── requirements/     index.md + linked files: the task
-│   ├── rules/            standing rules for every task (optional)
+│   ├── rules/            standing rules for every task (+ drafted framework-*.md)
 │   └── feedbacks/        feedback files (optional)
 ├── workspace/            the live task (STATUS.md + one folder per stage)
 ├── task-logs/            archived tasks
